@@ -1,4 +1,4 @@
-# KORAL (Stage II): Knowledge-Graph Guided LLM Reasoning for SSD Operational Analysis
+# KORAL: Knowledge-Graph Guided LLM Reasoning for SSD Operational Analysis
 
 This repository contains **KORAL**, a pipeline that combines:
 - **SSD telemetry** (SMART + optional workload / environment / controller context),
