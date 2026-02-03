@@ -23,10 +23,6 @@ KORAL/
 └─ rule_base.json                     # Stage II rule base (summarization/mapping rules)
 ```
 
-> Tip: If you see `.DS_Store` committed, add it to `.gitignore`.
-
----
-
 ## Installation
 
 Create a fresh environment (recommended) and install dependencies:
