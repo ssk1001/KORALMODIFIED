@@ -33,7 +33,7 @@ KORAL/
 │  ├─ fleet_cli.py                    # fleet-level Stage II CLI (Table II style)
 │  ├─ fleet_pipeline.py               # fleet-level runner
 │  ├─ config.py
-│  ├─ README.md                       # stage II overview (optional)
+│  ├─ README.md                       # stage II overview
 │  └─ README_STAGE_II.txt             # stage II detailed text readme
 └─ rule_base.json                     # Stage II rule base (summarization/mapping rules)
 ```
