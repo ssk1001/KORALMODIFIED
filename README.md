@@ -5,7 +5,7 @@ KORAL is a two-stage pipeline:
 - **Stage I (Literature → LitKG):** builds a **Literature Knowledge Graph (LitKG)** from SSD papers (PDF/TXT/MD) using a taxonomy-guided extraction prompt. Outputs **per-paper TTL/JSON**, updates **taxonomy.json** with new concepts, and maintains a **merged global_knowledge_graph.ttl**.
 - **Stage II (Telemetry → DataKG → LLM):** builds a **Data Knowledge Graph (DataKG)** per sample from SSD telemetry (SMART + optional workload/environment/controller context), retrieves relevant literature evidence from LitKG, calls **GPT‑4o**, and evaluates outputs across multiple tasks.
 
-Stage II is modular: each modality (SMART, workload, environment, flash type, controller policies) has its own feature module. Metrics are computed automatically per task.
+Stage II: each modality (SMART, workload, environment, flash type, controller policies) has its own feature module. Metrics are computed automatically per task.
 
 ---
 
