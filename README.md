@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # KORAL: Knowledge Graph Guided LLM Reasoning for SSD Operational Analysis
+=======
+# KORAL: Knowledge-Graph Guided LLM Reasoning for SSD Operational Analysis
+>>>>>>> 1781e156092a81120ebebad8f2688beb61f91665
 
 KORAL is a two-stage pipeline:
 
