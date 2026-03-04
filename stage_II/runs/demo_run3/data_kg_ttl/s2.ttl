@@ -1,0 +1,60 @@
+@prefix ex: <http://example.org/koral-data#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:s2 a ex:Sample ;
+    ex:hasAttributeFrame ex:AF_media_errors,
+        ex:AF_power_on_hours,
+        ex:AF_read_errors,
+        ex:AF_wear_leveling_count,
+        ex:AF_write_errors .
+
+ex:AF_media_errors a ex:AttributeFrame ;
+    ex:attribute "media_errors" ;
+    ex:coverage 1e+00 ;
+    ex:max 1e+01 ;
+    ex:median 1e+01 ;
+    ex:min 1e+01 ;
+    ex:n 1 ;
+    ex:outliers 0 ;
+    ex:p95 1e+01 .
+
+ex:AF_power_on_hours a ex:AttributeFrame ;
+    ex:attribute "power_on_hours" ;
+    ex:coverage 1e+00 ;
+    ex:max 1e+04 ;
+    ex:median 1e+04 ;
+    ex:min 1e+04 ;
+    ex:n 1 ;
+    ex:outliers 0 ;
+    ex:p95 1e+04 .
+
+ex:AF_read_errors a ex:AttributeFrame ;
+    ex:attribute "read_errors" ;
+    ex:coverage 1e+00 ;
+    ex:max 5e+00 ;
+    ex:median 5e+00 ;
+    ex:min 5e+00 ;
+    ex:n 1 ;
+    ex:outliers 0 ;
+    ex:p95 5e+00 .
+
+ex:AF_wear_leveling_count a ex:AttributeFrame ;
+    ex:attribute "wear_leveling_count" ;
+    ex:coverage 1e+00 ;
+    ex:max 7e+01 ;
+    ex:median 7e+01 ;
+    ex:min 7e+01 ;
+    ex:n 1 ;
+    ex:outliers 0 ;
+    ex:p95 7e+01 .
+
+ex:AF_write_errors a ex:AttributeFrame ;
+    ex:attribute "write_errors" ;
+    ex:coverage 1e+00 ;
+    ex:max 2e+00 ;
+    ex:median 2e+00 ;
+    ex:min 2e+00 ;
+    ex:n 1 ;
+    ex:outliers 0 ;
+    ex:p95 2e+00 .
+

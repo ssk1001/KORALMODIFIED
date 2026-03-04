@@ -1,0 +1,3 @@
+disk_id,temperature,power_on_hours,read_errors,write_errors,wear_leveling_count,host_reads,host_writes,media_errors,fail
+d_bad,55,10000,80,40,95,500000,450000,60,1
+d_ok,38,2000,0,0,20,80000,70000,0,0

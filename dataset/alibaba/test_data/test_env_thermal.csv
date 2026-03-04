@@ -1,0 +1,4 @@
+disk_id,temperature,humidity,vibration
+d1,42,30,0.2
+d2,58,35,0.3
+d3,47,28,0.1

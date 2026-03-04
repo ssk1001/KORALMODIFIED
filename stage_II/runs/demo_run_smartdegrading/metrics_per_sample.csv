@@ -1,0 +1,9 @@
+sample_id,task,FiP,CFV
+s0,predictive,,
+s0,descriptive,1.0,
+s0,prescriptive,1.0,
+s0,whatif,,1.0
+s1,predictive,,
+s1,descriptive,0.0,
+s1,prescriptive,0.0,
+s1,whatif,,1.0

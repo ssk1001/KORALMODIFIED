@@ -24,7 +24,7 @@ class OpenAIChatClient:
         self,
         model: str = "gpt-4o",
         api_key: Optional[str] = None,
-        base_url: str = "https://api.openai.com/v1",
+        base_url: str = "https://openrouter.ai/api/v1",
         timeout_s: int = 120,
     ):
         self.model = model

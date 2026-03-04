@@ -1,0 +1,4 @@
+@prefix ex: <http://example.org/koral-data#> .
+
+ex:s3 a ex:Sample .
+

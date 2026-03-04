@@ -11,6 +11,15 @@ from typing import Any, Dict, List, Optional, Tuple
 
 import numpy as np
 
+ALIAS_SMART_COLUMNS = {
+        "read_errors": "smart_read_errors",
+        "write_errors": "smart_write_errors",
+        "media_errors": "smart_media_errors",
+        "wear_leveling_count": "smart_wear_leveling",
+        "power_on_hours": "smart_power_on_hours"
+    }
+
+
 _LISTISH_RE = re.compile(r"^\s*\[.*\]\s*$")
 
 def _to_float(x: Any) -> Optional[float]:
@@ -149,6 +158,9 @@ class SmartFrame:
 
 def build_smart_ir(row: Dict[str, Any], smart_cols: List[str]) -> Dict[str, Any]:
     """Create an IR dict for SMART attributes from an input sample row."""
+    for col, alias in ALIAS_SMART_COLUMNS.items():
+        if col in row and alias not in row:
+            row[alias] = row[col]
     frames: List[SmartFrame] = []
     for c in smart_cols:
         if c not in row:
@@ -170,9 +182,24 @@ def build_smart_ir(row: Dict[str, Any], smart_cols: List[str]) -> Dict[str, Any]
     }
 
 def infer_smart_columns(row_keys: List[str]) -> List[str]:
-    """Infer SMART columns like r_5, r_9, ... from a CSV header."""
+    """Infer SMART columns from dataset header."""
+
     cols = []
+
     for k in row_keys:
+
+        # Existing behavior (Backblaze / Alibaba style)
         if re.fullmatch(r"r_\d+", str(k)):
             cols.append(str(k))
-    return sorted(cols, key=lambda x: int(x.split("_")[1]))
+
+        # Additional support for generic SMART-like telemetry
+        elif str(k) in [
+            "read_errors",
+            "write_errors",
+            "media_errors",
+            "wear_leveling_count",
+            "power_on_hours",
+        ]:
+            cols.append(str(k))
+
+    return sorted(cols)

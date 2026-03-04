@@ -1,0 +1,20 @@
+{
+  "predictive": {},
+  "descriptive": {
+    "n_ref": 0
+  },
+  "prescriptive": {
+    "n_ref": 0
+  },
+  "whatif": {
+    "n_ref": 0
+  },
+  "notes": {
+    "reference_columns_expected": [
+      "ref_descriptive",
+      "ref_prescriptive",
+      "ref_whatif"
+    ],
+    "if_missing": "Text overlap metrics are skipped; FiP/CFV still computed from evidence refs when available."
+  }
+}

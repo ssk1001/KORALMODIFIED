@@ -1,0 +1,4 @@
+disk_id,read_ratio,queue_depth,block_size
+d1,0.90,8,4
+d2,0.85,64,16
+d3,0.50,4,8

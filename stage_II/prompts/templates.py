@@ -57,7 +57,9 @@ Produce JSON with:
 }}
 
 Rules:
-- Summary should describe health + performance signals seen in IR.
+- First inspect IR.summary to understand dataset structure and available signals.
+- Use telemetry signals present in the sample (e.g., temperature, errors, wear counters).
+- Summary should describe health + performance signals inferred from those values.
 - Atomic claims must be grounded with refs.
 """
 

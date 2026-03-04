@@ -20,6 +20,7 @@ from stage_II.features.algorithms import build_algorithms_ir
 from stage_II.kg.data_kg import build_data_kg
 from stage_II.kg.literature_kg import LiteratureKG
 from stage_II.llm.openai_client import OpenAIChatClient
+from stage_II.agents.summarizer.summarizer_agent import summarize_ir
 from stage_II.prompts.templates import (
     system_prompt,
     predictive_user_prompt,
@@ -129,11 +130,12 @@ class Stage2Runner:
             # Build IR
             ir: Dict[str, Any] = {}
             ir.update(build_smart_ir(row, smart_cols))
+            # print("\n[DEBUG SMART IR]", ir.get("smart"))
             ir.update(build_env_ir(row))
             ir.update(build_workload_ir(row))
             ir.update(build_flash_type_ir(row))
             ir.update(build_algorithms_ir(row))
-
+            ir["summary"] = summarize_ir(ir)
             # Data KG
             dk = build_data_kg(sample_id, ir)
             if dk.ttl:
@@ -174,7 +176,9 @@ class Stage2Runner:
                 if task == "predictive":
                     user = predictive_user_prompt(sample_payload)
                 elif task == "descriptive":
+                    print("\n======SAMPLE SENT TO LLM===========")
                     user = descriptive_user_prompt(sample_payload)
+                    print(user)
                 elif task == "prescriptive":
                     user = prescriptive_user_prompt(sample_payload)
                 elif task == "whatif":
